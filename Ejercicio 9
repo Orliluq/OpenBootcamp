@@ -1,0 +1,88 @@
+Enunciado del ejercicio:
+
+Crea una clase Persona con las siguientes variables:
+
+La edad
+
+El nombre
+
+El teléfono
+
+Una vez creada la clase, crea una nueva clase Cliente que herede de Persona, esta nueva clase tendrá la variable credito solo para esa clase.
+
+Crea ahora un objeto de la clase Cliente que debe tener como propiedades la edad, el telefono, el nombre y el credito, tienes que darles valor y mostrarlas por pantalla.
+
+Una vez hecho esto, haz lo mismo con la clase Trabajador que herede de Persona, y con una variable salario que solo tenga la clase Trabajador.
+
+// Clase Persona
+class Persona {
+  constructor(nombre, edad, telefono) {
+    this._nombre = nombre;
+    this._edad = edad;
+    this._telefono = telefono;
+  }
+  
+  get nombre() {
+    return this._nombre;
+  }
+  
+  set nombre(nombre) {
+    this._nombre = nombre;
+  }
+  
+  get edad() {
+    return this._edad;
+  }
+  
+  set edad(edad) {
+    this._edad = edad;
+  }
+  
+  get telefono() {
+    return this._telefono;
+  }
+  
+  set telefono(telefono) {
+    this._telefono = telefono;
+  }
+}
+
+// Clase Cliente
+class Cliente extends Persona {
+  constructor(nombre, edad, telefono, credito) {
+    super(nombre, edad, telefono);
+    this._credito = credito;
+  }
+  
+  get credito() {
+    return this._credito;
+  }
+  
+  set credito(credito) {
+    this._credito = credito;
+  }
+}
+
+// Crear un objeto de la clase Cliente
+var cliente = new Cliente("Juan", 25, "123456789", 5000);
+console.log("Cliente - Nombre: " + cliente.nombre + ", Edad: " + cliente.edad + ", Teléfono: " + cliente.telefono + ", Crédito: " + cliente.credito);
+
+// Clase Trabajador
+class Trabajador extends Persona {
+  constructor(nombre, edad, telefono, salario) {
+    super(nombre, edad, telefono);
+    this._salario = salario;
+  }
+  
+  get salario() {
+    return this._salario;
+  }
+  
+  set salario(salario) {
+    this._salario = salario;
+  }
+}
+
+// Crear un objeto de la clase Trabajador
+var trabajador = new Trabajador("Pedro", 35, "987654321", 20000);
+console.log("Trabajador - Nombre: " + trabajador.nombre + ", Edad: " + trabajador.edad + ", Teléfono: " + trabajador.telefono + ", Salario: " + trabajador.salario);
