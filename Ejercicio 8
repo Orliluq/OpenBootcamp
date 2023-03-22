@@ -1,0 +1,52 @@
+Enunciado del ejercicio:
+
+Para practicar la encapsulación:
+
+Crear clase Persona.
+
+Crear variables las privadas edad, nombre y telefono de la clase Persona.
+
+Crear gets y sets de cada propiedad.
+
+Crear un objeto persona en el main.
+
+Utiliza los gets y sets para darle valores a las propiedades edad, nombre y telefono, por último muéstralas por consola.
+
+class Persona {
+  constructor() {
+    var _edad;
+    var _nombre;
+    var _telefono;
+    
+    this.getEdad = function() {
+      return _edad;
+    }
+    
+    this.setEdad = function(edad) {
+      _edad = edad;
+    }
+    
+    this.getNombre = function() {
+      return _nombre;
+    }
+    
+    this.setNombre = function(nombre) {
+      _nombre = nombre;
+    }
+    
+    this.getTelefono = function() {
+      return _telefono;
+    }
+    
+    this.setTelefono = function(telefono) {
+      _telefono = telefono;
+    }
+  }
+}
+
+var persona = new Persona();
+persona.setEdad(25);
+persona.setNombre("Juan");
+persona.setTelefono("123456789");
+
+console.log("La edad de " + persona.getNombre() + " es " + persona.getEdad() + " y su teléfono es " + persona.getTelefono());
